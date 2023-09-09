@@ -1,0 +1,115 @@
+@import "_mixins";
+@import "_variables";
+
+/*  Código de nuestro menu */
+.header {
+    width: 100%;
+    background-color: #0e0e1a;
+    color: white;
+    padding: 1em;
+
+    @include flex(row, wrap, space-between, center);
+    .h1 {
+        font: {
+            size: 3rem;
+            family: $txtgeneral;
+            weight: bold;
+        }
+    }
+    .button {
+        display: none;
+        cursor: pointer;
+
+        @include media() {
+            display: block;
+        }
+    }
+    .svg {
+        width: 2em;
+        height: 2em;
+        fill: white;
+    }
+
+    .nav {
+        @include media() {
+            width: 100%;
+
+            opacity: 0;
+            height: 0vh;
+            pointer-events: none;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            @include flex(column, nowrap, center, center);
+
+            &.activo {
+                opacity: 1;
+                height: 50vh;
+                pointer-events: auto;
+            }
+        }
+    }
+    .ul {
+        @include flex(row, wrap, flex-end, center);
+
+        @include media() {
+            flex-direction: column;
+        }
+    }
+    .li {
+        font: {
+            weight: bold;
+            size: 1.5rem;
+            family: $txtgeneral;
+        }
+        margin: 0 0.5em;
+        @include media() {
+            margin: 1em 0;
+        }
+    }
+
+    .li:hover {
+        color: $coloruno;
+    }
+}
+
+/*footer*/
+
+.footer {
+    background-color: #0e0e1a;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .footer__social {
+            margin: 20px 0;
+
+            a {
+                display: inline-block;
+                margin: 0 10px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    transition: transform 0.3s;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+        .footer__info {
+            p {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin: 5px 0;
+            }
+        }
+    }
+}

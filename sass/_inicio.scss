@@ -1,0 +1,78 @@
+@import "./variables";
+@import "./mixins";
+
+// Estilos para la sección de inicio
+.inicio {
+    background: {
+        image: url(/img/fondo.png);
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    color: #2d2a2a;
+    padding: 20px;
+    height: 80vh;
+    @include flex-center;
+
+    .inicio__desc {
+        flex-direction: column;
+
+        @include flex-center;
+
+        .inicio__info {
+            margin-bottom: 2rem;
+
+            .inicio__titulo {
+                font-size: 4.5rem;
+                margin-bottom: 1.8rem;
+                font-weight: bold;
+
+                .inicio__span {
+                    color: rebeccapurple;
+                    font-weight: 900;
+                }
+            }
+
+            .inicio__txt {
+                font-size: 1.8rem;
+            }
+        }
+
+        .inicio__social {
+            a {
+                display: inline-block;
+                margin-left: 10px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 10px;
+
+        .inicio__desc {
+            flex-direction: column;
+
+            .inicio__info {
+                text-align: center;
+
+                .inicio__titulo {
+                    font-size: 2.5rem;
+                }
+
+                .inicio__txt {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .inicio__social {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+    }
+}

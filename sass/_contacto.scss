@@ -1,0 +1,56 @@
+@import "./variables";
+@import "./mixins";
+
+.contacto {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+        font-family: $titulo;
+        @include titulo;
+    }
+
+    .servicios {
+        margin-top: 20px;
+        h3 {
+            font-family: $txtgeneral;
+            @include descripcion;
+        }
+        p {
+            font-family: $txtgeneral;
+            @include descripcion;
+        }
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            font-family: $txtgeneral;
+            @include descripcion;
+        }
+    }
+
+    .contacto-info {
+        margin-top: 20px;
+        h3 {
+            font-family: $titulo;
+            font: {
+                size: 2rem;
+                weight: 800;
+            }
+        }
+        p {
+            font-family: $txtgeneral;
+            @include descripcion;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    }
+}

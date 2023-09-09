@@ -1,0 +1,51 @@
+/*mixins para flex centrado*/
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*botones*/
+
+@mixin boton($fondo, $color-texto, $borde: 1px solid $fondo, $padding: 10px 20px) {
+    background-color: $fondo;
+    color: $color-texto;
+    border: $borde;
+    padding: $padding;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($fondo, 10%);
+    }
+}
+
+/*menu*/
+@mixin flex($dir, $wrap, $just, $align) {
+    display: flex;
+    flex-flow: $dir $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin media() {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+// Mixin para títulos
+@mixin titulo {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+// Mixin para descripciones
+@mixin descripcion {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 20px;
+}
